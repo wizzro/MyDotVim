@@ -2,8 +2,13 @@
 set enc=utf-8
 set fenc=utf-8
 
+
 call pathogen#runtime_append_all_bundles() 
 "call pathogen#helptags() 
+
+if $VIMTEST
+   source ~/.vimrc-test
+endif
 
 syntax enable
 
@@ -14,6 +19,10 @@ syntax enable
 " et nopaste le contraire
 set nopaste
 
+" VI reprend le controle de la souris !
+" pour faire des copier coller a la souris
+set mouse=a
+
 " Toujours laisser des lignes visibles (içi 3) au dessus/en dessous du curseur quand on
 " atteint le début ou la fin de l'écran :
 set scrolloff=3
@@ -22,6 +31,7 @@ set scrolloff=3
 set nostartofline
 
 set laststatus=1
+
 
 
 "dict for autocomplete ctrl-x ctrl-k...
